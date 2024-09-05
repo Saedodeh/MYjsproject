@@ -10,46 +10,57 @@
 </head>
 <body>
     <h1>Phone Book</h1>
-    <div id="phonebook">
-        <!-- Contacts will be dynamically added here -->
-    </div>
     <div id="controls">
-        <button onclick="openAddModal()">Add Contact</button>
-        <input type="text" id="searchInput" onkeyup="searchContacts()" placeholder="Search by username...">
-        <button onclick="deleteAll()">Delete Contacts</button>
+        <button onclick="openAddModal()">+ Add Contact</button>
+        <button id="deleteAllContactsButton">Delete All Contacts</button>
     </div>
-  
-    <!-- Modal for Add Contact -->
+    
+        <input type="text" id="searchInput" placeholder="Search by username...">
+    
+    <div id="phonebook"></div>
+
+    <!-- Add Contact Modal -->
     <div id="addModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeAddModal()">&times;</span>
-            <h2>Add New Contact</h2>
+            <h2>Add Contact</h2>
             <input type="text" id="addIdInput" placeholder="ID">
             <input type="text" id="addUsernameInput" placeholder="Username">
             <input type="text" id="addPhoneInput" placeholder="Phone">
             <input type="text" id="addEmailInput" placeholder="Email">
             <input type="text" id="addAddressInput" placeholder="Address">
-            <button onclick="saveContact()">Save Contact</button>
+            <button onclick="saveContact()">Save</button>
         </div>
     </div>
 
-    <!-- Modal for Edit Contact -->
+    <!-- Contact Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span id="closeInfoModal" class="close">&times;</span>
+            <h2>Contact Info</h2>
+            <img id="infoPhoto" src="" alt="Contact Photo" class="contact-photo">
+            <p id="infoUsername"></p>
+            <p id="infoId"></p>
+            <p id="infoPhone"></p>
+            <p id="infoEmail"></p>
+            <p id="infoAddress"></p>
+        </div>
+    </div>
+
+    <!-- Edit Contact Modal -->
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEditModal()">&times;</span>
             <h2>Edit Contact</h2>
-            <input type="hidden" id="editIdInput">
             <input type="text" id="editUsernameInput" placeholder="Username">
             <input type="text" id="editPhoneInput" placeholder="Phone">
             <input type="text" id="editEmailInput" placeholder="Email">
-            <input type="text" id="editAddressInput" placeholder="Address">
-            <button onclick="updateContact()">Update Contact</button>
+            <button onclick="updateContact()">Update</button>
         </div>
     </div>
+
     <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2024 Saed & Yazan PhoneBook. All Rights Reserved.</p>
-        </div>
+        &copy; 2024 Saed & Yazan PhoneBook. All Rights Reserved.
     </footer>
 
     <script src="script.js"></script>
