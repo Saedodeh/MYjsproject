@@ -1,5 +1,4 @@
 /* איפוס סגנונות */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background:url(./whiteback.jfif);/* רקע הדף */
+    background:url(./whiteback.jfif); /* רקע הדף */
     color: #fff;
     margin: 0;
     padding: 20px;
@@ -17,51 +16,89 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #333;
+    background-color: #4d4b4b;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/*  הכותרת  */
+
+/* הכותרת */
 h1 {
     text-align: center;
     color: #3f3a3a;
     margin-bottom: 20px;
 }
 
+#searchInput{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    color: black;
+    margin-bottom: 10px;
+}
+
 #phonebook {
     margin-top: 20px;
+    width: 50%;
+    margin: auto;
+    align-items: center;
 }
-/*    פרטי הקשר */
 
+/* פרטי הקשר */
 .contact {
-    background-color: #444;
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #666;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items and buttons to the end */
+    gap: 15px; /* Space between photo and content */
+}
+
+.contact img.contact-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between username and buttons */
+    flex-grow: 1; /* Allow this section to take available space */
 }
 
 .contact p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #fff; /* Adjusted font color for contact info */
+    margin: 0; /* No extra margin needed */
+    font-size: 30px;
+    color: #fff;
 }
-/*  רכיבי הבקרה בתור שורה */
 
+/* Align buttons to the end of the contact card */
+.contact-buttons {
+    display: flex;
+    gap: 8px; /* Padding between buttons */
+}
+
+/* רכיבי הבקרה בתור שורה */
 #controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    align-content: center;
+    width: 50%;
 }
- /*    תיבות הקלט */
 
+#controls > button {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+/* תיבות הקלט */
 input[type="text"], input[type="hidden"] {
     padding: 10px;
     font-size: 16px;
@@ -69,15 +106,22 @@ input[type="text"], input[type="hidden"] {
     border-radius: 5px;
     width: calc(100% - 20px);
     margin-bottom: 10px;
-    background-color: #666;
-    color: #fff;
+    background-color: white;
+    color: black;
+}
+
+#searchBar {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #169ace;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -86,10 +130,10 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #4549a0;
 }
-/* כפתור מחיקה */
 
+/* כפתור מחיקה */
 button.deleteBtn {
     background-color: #f44336;
 }
@@ -119,8 +163,8 @@ button.editBtn:hover {
     overflow: auto;
     padding-top: 50px; /* מיקום התיבה */
 }
-/* תוכן המודל */
 
+/* תוכן המודל */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -132,8 +176,8 @@ button.editBtn:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #333; /* צבע הטקסט בתוכן המודל */
 }
-/* כפתור סגירה */
 
+/* כפתור סגירה */
 .close {
     color: #aaa;
     float: right;
@@ -150,6 +194,7 @@ button.editBtn:hover {
 
 /* סגנונות כותרת תחתונה */
 .footer {
+    font-size: 14px;
     background-color: #333;
     color: #fff; 
     padding: 0px; 
@@ -160,13 +205,4 @@ button.editBtn:hover {
     width: 100%; 
     border-top: 1px solid #444; 
     z-index: 1000; 
-}
-
-.footer-container {
-    max-width: 800px; 
-}
-
-.footer p {
-    margin: 0; 
-    font-size: 14px; 
 }
